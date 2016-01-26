@@ -6,10 +6,10 @@ $link = $_GET['link'];
 $followers = $_GET['followers'];
 $followings = $_GET['followings'];
 $tracks = $_GET['tracks'];
-
+$table = $_GET['table'];
 #$mysqli = mysqli_connect('localhost', 'root', 'enileuqaj1', 'sc_links');
 $mysqli= mysqli_connect('localhost', 'root', 'enileuqaj1', 'sc');
-$query = 'INSERT INTO sc.urls (link, followers, followings, tracks, visited) VALUES  ("'.$link.'",'.$followers.','.$followings.','.$tracks.',"false")';
+$query = 'INSERT INTO sc.'.$table.' (link, followers, followings, tracks, visited) VALUES  ("'.$link.'",'.$followers.','.$followings.','.$tracks.',"false")';
 if (mysqli_query($mysqli, $query)){
         echo "Inserted";
     } else {
