@@ -6,7 +6,11 @@ header('Access-Control-Allow-Methods: GET, POST, PUT');
 $link = $_GET['link'];
 $table = $_GET['table'];
 $conn = new mysqli('localhost', 'root', 'enileuqaj1', 'sc');
+<<<<<<< HEAD
 $query = "UPDATE sc.".$table." SET visited='true', reg_date=now() WHERE link='".$link."'";
+=======
+$query = "UPDATE sc.urls_everdom SET visited='true' WHERE link='".$link."'";
+>>>>>>> origin/master
 $result = $conn->query($query);
 echo $query;
 

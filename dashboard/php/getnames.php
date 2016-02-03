@@ -5,7 +5,11 @@ header('Access-Control-Allow-Methods: GET, POST, PUT');
 $table = $_GET['table'];
 $conn = new mysqli('localhost', 'root', 'enileuqaj1', 'sc');
 #$query = "SELECT link FROM sc.urls WHERE visited LIKE 'false' ORDER BY id ASC LIMIT 180";
+<<<<<<< HEAD
 $query = "SELECT link FROM sc.".$table." WHERE visited LIKE 'false' ORDER BY RAND() LIMIT 180";
+=======
+$query = "SELECT link FROM sc.urls_everdom WHERE visited LIKE 'false' ORDER BY RAND() LIMIT 180";
+>>>>>>> origin/master
 
 $result = $conn->query($query);
 $array = array();
