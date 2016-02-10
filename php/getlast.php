@@ -5,11 +5,7 @@ header('Access-Control-Allow-Methods: GET, POST, PUT');
 $table = $_GET['table'];
 $conn = new mysqli('localhost', 'root', 'enileuqaj1', 'sc');
 #$query = "SELECT link FROM sc.urls WHERE visited LIKE 'false' ORDER BY id ASC LIMIT 180";
-<<<<<<< HEAD
-$query = "SELECT link FROM sc.".$table." WHERE visited LIKE 'false' ORDER BY RAND() LIMIT 180";
-=======
-$query = "SELECT link FROM sc.urls_everdom WHERE visited LIKE 'false' ORDER BY RAND() LIMIT 180";
->>>>>>> origin/master
+$query = "SELECT reg_date FROM sc.".$table." ORDER BY reg_date DESC LIMIT 1;";
 
 $result = $conn->query($query);
 $array = array();
@@ -18,8 +14,8 @@ if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
         
-        array_push($array, $row["link"]);
-         echo $row["link"].",";
+        array_push($array, $row["reg_date"]);
+         echo $row["reg_date"];
     }
 
 } 
