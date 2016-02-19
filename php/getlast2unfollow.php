@@ -16,9 +16,8 @@ if ($result->num_rows > 0) {
         
         array_push($array, $row["uniqueid"]);
          echo $row["uniqueid"].",";
-         $r = $conn->query($query);
          $query = 'DELETE FROM sc.'.$table.'_delete WHERE uniqueid="'.$row["uniqueid"].'";';
-         
+         $r = $conn->query($query);
 	    if (mysqli_query($r, $query)){
 	    } else {
 	    }

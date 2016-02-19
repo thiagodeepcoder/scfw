@@ -8,7 +8,12 @@ $table = $_GET['table'];
 $mysqli= mysqli_connect('localhost', 'root', 'enileuqaj1', 'sc');
 $query = 'DELETE FROM sc.'.$table.' WHERE link="'.$link.'";';
 if (mysqli_query($mysqli, $query)){
-        echo "Deleted";
+        $query = 'DELETE FROM sc.'.$table.'_delete WHERE link="'.$link.'";';
+        if (mysqli_query($mysqli, $query)){
+	        echo "Deleted from both tables";
+	    } else {
+	        echo "ERROR: Could not able to execute $query. " . mysqli_error($mysqli);
+	    }
     } else {
         echo "ERROR: Could not able to execute $query. " . mysqli_error($mysqli);
     }
