@@ -5,7 +5,7 @@ const DB_USER = 'root';
 const DB_PASS = '123';
 
 $link = new MySQLi(DB_HOST, DB_USER, DB_PASS);
-
+// test
 $action = $_GET["action"];
 $db = $_GET["db"];
 $table = $_GET["table"];
